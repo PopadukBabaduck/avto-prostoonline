@@ -144,7 +144,14 @@
     <div class="hero-highlight">
       <b>Усі 100% людей хто звернувся саме до нас отримують посвідчення уже за 2 тиждні !</b>
     </div>
-    <a href="#" class="btn main-btn">Залишити заявку</a>
+ <a
+  href="https://t.me/valerii_mreo"
+  target="_blank"
+  class="btn main-btn"
+>
+  Залишити заявку
+</a>
+
   </div>
   <div class="hero-image">
     <img src="logo2.png" alt="Авто і права">
@@ -504,6 +511,17 @@ contactObserver.observe(document.querySelector('.contact-section'));
     <path d="M101 168.3c1.1 0 2-0.5 2.7-1.5l15.7-30.8 0.4 0.3 35.2 26.1c4.1 2.3 7.7 1.4 8.8-4.4l23.3-87.3c1.5-5.5-2-8.1-6.1-6.7L54.3 115c-3.6 1.3-3.4 3.1-0.7 4l31.5 9.8 12.3 40.7c0.6 2 1.3 2.8 3.1 2.8z" fill="#d2eefb"/>
   </svg>
 </a>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // выбираем все кнопки, на которых хотим отлавливать Lead
+    const leadButtons = document.querySelectorAll('.main-btn, .telegram-btn, .contact-fixed');
+    leadButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        fbq('track', 'Lead');
+      });
+    });
+  });
+</script>
 
 </body>
 </html>
