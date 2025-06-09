@@ -2676,3 +2676,775 @@ body {
 }
 
 
+/* === Переопределение стилей Navbar === */
+.navbar {
+  /* Новый фон — градиент от темно-синего к фиолетовому */
+  background: linear-gradient(90deg, #1f1c45 0%, #3e206d 100%) !important;
+  /* Более мягкая тень */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+  /* Добавим полупрозрачную подложку */
+  background-clip: padding-box;
+  backdrop-filter: blur(6px);
+}
+
+.navbar .nav-container {
+  /* Чуть больше внутренних отступов */
+  padding: 0 32px !important;
+  height: 72px !important;
+}
+
+.nav-menu a {
+  /* Сделаем ссылки не зелёными, а светло-фиолетовыми */
+  color: #c8b9ff !important;
+  /* Изменим фон при hover на неоновый */
+  transition: background 0.2s, color 0.2s !important;
+}
+.nav-menu a:hover,
+.nav-menu a:focus,
+.nav-menu a.active {
+  background: rgba(200, 185, 255, 0.2) !important;
+  color: #fff !important;
+  text-shadow: 0 0 4px #c8b9ff;
+}
+
+/* Бургер-кнопка */
+.burger span {
+  background: #c8b9ff !important;
+}
+.burger.active span:nth-child(1),
+.burger.active span:nth-child(3) {
+  background: #ff7eff !important;
+}
+
+/* Мобильное меню */
+@media (max-width: 900px) {
+  .nav-menu {
+    background: rgba(31, 28, 69, 0.95) !important;
+  }
+  .nav-menu a {
+    background: transparent !important;
+    color: #c8b9ff !important;
+  }
+  .nav-menu a:hover,
+  .nav-menu a.active {
+    background: #3e206d !important;
+  }
+}
+.nav-menu a {
+  background: #2a2548 !important;
+  box-shadow:
+    4px 4px 8px rgba(0, 0, 0, 0.6),
+    -4px -4px 8px rgba(255, 255, 255, 0.08) !important;
+  border-radius: 16px !important;
+}
+/* === Исправление Hero-секции: full-width + контрастный фон и текст === */
+.hero {
+  /* развернуть на всю ширину */
+  max-width: none !important;
+  width: 100vw !important;
+  margin: 0 !important;
+  padding: 100px 4vw 120px !important;
+
+  /* более мягкий, равномерный градиент-фон */
+  background: linear-gradient(135deg, #2d244a 0%, #3e2e63 100%) !important;
+}
+
+.hero::before {
+  /* чуть более слабый радиальный акцент */
+  background: radial-gradient(circle at 80% 20%, rgba(200,185,255,0.1), transparent 70%) !important;
+}
+
+.hero__content,
+.hero__content h1,
+.hero__content h2,
+.hero__text,
+.hero__btn {
+  /* все внутренние блоки получат белый текст/фон + прозрачность для контраста */
+  color: #f5f5f5 !important;
+}
+
+.hero__content h1,
+.hero__content h2 {
+  background: rgba(50,35,70,0.7) !important;
+}
+
+.hero__text {
+  background: rgba(50,35,70,0.5) !important;
+  color: #e0d9ff !important;
+}
+
+.hero__btn {
+  background: #c8b9ff !important;
+  color: #2e1e4a !important;
+}
+
+/* Убираем боковые белые «флеши» в мобильных браузерах */
+body, html {
+  overflow-x: hidden;
+}
+/* === Hero: белый текст + тёмные полупрозрачные фоны === */
+.hero-content h1,
+.hero-content h2,
+.hero-content p,
+.hero-highlight,
+.hero-badge {
+  /* текст белый */
+  color: #ffffff !important;
+  /* фон — чёрный с прозрачностью */
+  background: rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Отдельно кнопку и фразу «24/7» */
+.btn.main-btn,
+.hero-content .hero-badge {
+  color: #ffffff !important;
+}
+
+/* Если нужно убрать фон у «24/7» и сделать его белым текстом */
+.hero-content .hero-badge {
+  background: transparent !important;
+  border: 1px solid rgba(255,255,255,0.6) !important;
+}
+
+/* И убедимся, что ссылки/иконки тоже читаются */
+.hero-content a,
+.hero-content a .nav-icon {
+  color: #ffffff !important;
+}
+/* === Статистика: Dark Cyberpunk Neumorphism === */
+.stats-section {
+  background: #2d244a !important;  /* глубокий тёмный фон */
+  padding: 60px 4vw !important;
+}
+
+.stats-container {
+  /* светлая «плашка» с неоморфными тенями */
+  background: rgba(255,255,255,0.08) !important;
+  border-radius: 32px !important;
+  box-shadow:
+    inset 6px 6px 16px rgba(0,0,0,0.8),
+    inset -6px -6px 16px rgba(255,255,255,0.1),
+    4px 4px 10px rgba(0,0,0,0.7),
+    -4px -4px 10px rgba(255,255,255,0.1) !important;
+  padding: 40px !important;
+}
+
+/* центруем и делаем текст белым */
+.stats-item {
+  color: #ffffff !important;
+  text-align: center;
+}
+
+/* Большие цифры */
+.stats-main {
+  font-size: 3.2em !important;
+  color: #e0d9ff !important;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.7) !important;
+}
+
+/* Маленькие буквы */
+.stats-k {
+  color: rgba(224,217,255,0.8) !important;
+}
+
+/* Иконки — ярче */
+.stats-icons .heart {
+  color: #ff4d4d !important;
+  filter: drop-shadow(0 0 6px #ff4d4dcc) !important;
+}
+
+/* Описание под цифрами */
+.stats-label,
+.stats-small {
+  color: rgba(255,255,255,0.7) !important;
+  font-weight: 500 !important;
+}
+
+/* Правая колонка с CTA */
+.stats-cta {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Кнопка «Присоединиться» */
+.orange-btn {
+  background: linear-gradient(135deg, #ffa733, #ffdd55) !important;
+  color: #2e1e4a !important;
+  border-radius: 28px !important;
+  padding: 14px 36px !important;
+  box-shadow:
+    inset 4px 4px 8px rgba(0,0,0,0.6),
+    inset -4px -4px 8px rgba(255,255,255,0.2) !important;
+  transition: transform .2s, box-shadow .2s !important;
+}
+.orange-btn:hover {
+  transform: translateY(-3px) !important;
+  box-shadow:
+    inset 2px 2px 6px rgba(0,0,0,0.8),
+    inset -2px -2px 6px rgba(255,255,255,0.3) !important;
+}
+/* === WHY-SECTION: темная палитра под панель и Hero === */
+.why-section {
+  background: #2d244a !important;         /* тёмный фон */
+  box-shadow: inset 0 4px 24px rgba(0,0,0,0.6) !important;
+}
+
+.why-section::before {
+  /* отключаем светлые «блики» */
+  background: none !important;
+}
+
+/* Заголовок */
+.why-section .section-title {
+  color: #ffffff !important;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.8) !important;
+}
+
+/* Сетка карточек */
+.why-list {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(240px,1fr)) !important;
+  gap: 24px !important;
+}
+
+/* Каждая карточка */
+.why-item {
+  background: rgba(255,255,255,0.05) !important;  /* почти прозрачная светлая плашка */
+  border-radius: 16px !important;
+  padding: 20px 24px !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.7) !important;
+  transition: background 0.3s, transform 0.3s !important;
+}
+
+/* При ховере — чуть «подсветка» */
+.why-item:hover {
+  background: rgba(255,255,255,0.10) !important;
+  transform: translateY(-4px) !important;
+}
+
+/* Текст внутри карточки */
+.why-item, 
+.why-text {
+  color: #e0d9ff !important;
+}
+
+/* Иконки */
+.why-icon {
+  font-size: 2.2rem !important;
+  color: #8f6eff !important;
+  filter: drop-shadow(0 0 8px #8f6eff) !important;
+}
+
+/* Подписи */
+.why-text {
+  font-size: 1rem !important;
+  line-height: 1.5 !important;
+}
+
+/* Адаптив корректировки */
+@media (max-width: 800px) {
+  .why-list {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+}
+/* === STEPS-SECTION: темная палитра под панель и Hero === */
+.steps-section {
+  background: #2d244a !important;             /* глубокий фиолетово-синий фон */
+  padding: 64px 4vw 48px !important;
+  border-radius: 0 0 36px 36px !important;
+  box-shadow: inset 0 8px 48px rgba(0,0,0,0.6) !important;
+  position: relative;
+  overflow: hidden;
+  color: #e0d9ff !important;                  /* общий светлый текст */
+}
+
+/* Убираем любые светлые псевдо-элементы */
+.steps-section::before {
+  background: none !important;
+}
+
+/* Заголовок */
+.steps-title {
+  color: #ffffff !important;
+  font-size: 2.7rem !important;
+  text-shadow: 0 2px 16px rgba(0,0,0,0.8) !important;
+  margin-bottom: 36px !important;
+}
+
+/* Контейнер с графом остаётся flex */
+.steps-graph {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 32px 24px !important;
+  position: relative;
+  z-index: 1;
+}
+
+/* Карточки-этапы */
+.step-item {
+  background: rgba(255,255,255,0.05) !important;
+  border-radius: 24px !important;
+  padding: 20px !important;
+  min-width: 140px !important;
+  flex: 1 1 160px !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.7) !important;
+  transition: background 0.3s, transform 0.3s !important;
+}
+.step-item:hover {
+  background: rgba(255,255,255,0.10) !important;
+  transform: translateY(-6px) !important;
+}
+
+/* Круги-иконки */
+.step-icon {
+  width: 98px !important;
+  height: 98px !important;
+  border-radius: 50% !important;
+  background: radial-gradient(circle at 50% 50%, #39ce7b33 40%, #111 100%) !important;
+  border: 3px solid #39ce7b !important;
+  box-shadow: 0 0 24px #39ce7b66, 0 4px 16px rgba(0,0,0,0.6) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-bottom: 16px !important;
+  overflow: hidden;
+  transition: box-shadow 0.25s, transform 0.25s !important;
+}
+.step-icon img {
+  width: 56px !important;
+  height: 56px !important;
+  filter: drop-shadow(0 0 8px #39ce7b66) !important;
+  transition: transform 0.3s !important;
+}
+.step-item:hover .step-icon {
+  box-shadow: 0 0 32px #39ffb7aa, 0 6px 24px rgba(0,0,0,0.7) !important;
+  transform: scale(1.08) !important;
+}
+.step-item:hover .step-icon img {
+  transform: scale(1.1) rotate(-4deg) !important;
+}
+
+/* Текст внутри этапов */
+.step-label {
+  color: #e0d9ff !important;
+  font-size: 1.2rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 6px !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.6) !important;
+}
+.step-desc {
+  color: #cfd4e4 !important;
+  font-size: 1rem !important;
+  line-height: 1.4 !important;
+  font-weight: 500 !important;
+}
+
+/* Стрелки между этапами */
+.step-arrow::after {
+  border-bottom: 3px solid rgba(255,255,255,0.3) !important;
+  border-right: 3px solid rgba(255,255,255,0.3) !important;
+}
+.step-arrow {
+  margin: 0 -10px !important;
+  width: 48px !important;
+  height: 48px !important;
+  transition: filter 0.3s !important;
+}
+.step-arrow:hover::after {
+  border-color: #39ce7b !important;
+  transform: rotate(35deg) scale(1.1) !important;
+}
+
+/* Адаптив */
+@media (max-width: 900px) {
+  .steps-section { padding: 48px 2vw !important; }
+  .steps-graph { gap: 24px 0 !important; flex-direction: column; align-items: center !important; }
+  .step-arrow { display: none !important; }
+  .step-item { width: 94vw !important; max-width: 240px !important; }
+}
+/* === FAQ (Популярні питання) — Dark Cyberpunk Style === */
+.faq-section {
+  background: #2d244a !important;
+  padding: 80px 4vw !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.faq-section .section-title {
+  color: #e0d9ff !important;
+  font-size: 2.4rem !important;
+  text-align: center !important;
+  margin-bottom: 48px !important;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.7) !important;
+}
+
+/* Container всего FAQ */
+.faq-section .container {
+  max-width: 800px !important;
+  margin: 0 auto !important;
+}
+
+/* Каждый вопрос */
+.faq-item {
+  background: rgba(255,255,255,0.05) !important;
+  border-radius: 12px !important;
+  margin-bottom: 16px !important;
+  transition: background 0.3s, box-shadow 0.3s !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+  overflow: hidden !important;
+}
+
+/* Заголовок вопроса */
+.faq-question {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 16px 24px !important;
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  color: #f0f0f8 !important;
+  cursor: pointer !important;
+  position: relative !important;
+}
+
+/* Плюс-иконка */
+.faq-question .icon {
+  font-size: 1.4rem !important;
+  color: #39ce7b !important;
+  transition: transform 0.3s, color 0.3s !important;
+}
+
+/* При открытии поворачиваем плюс в крест */
+.faq-item.open .faq-question .icon {
+  transform: rotate(45deg) !important;
+  color: #12ff9a !important;
+}
+
+/* Линия-разделитель */
+.faq-item:not(:last-child) {
+  border-bottom: none !important;
+}
+
+/* Ответ */
+.faq-answer {
+  max-height: 0 !important;
+  padding: 0 24px !important;
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+  color: #cfd4e4 !important;
+  background: rgba(0,0,0,0.1) !important;
+  transition: max-height 0.4s ease, padding 0.4s ease !important;
+}
+
+/* Когда открыто */
+.faq-item.open .faq-answer {
+  max-height: 400px !important;
+  padding: 16px 24px 24px !important;
+}
+
+/* Hover эффекты */
+.faq-item:hover {
+  background: rgba(255,255,255,0.10) !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.5) !important;
+}
+.faq-question:hover .icon {
+  color: #12ff9a !important;
+}
+
+/* Адаптив */
+@media (max-width: 600px) {
+  .faq-section { padding: 60px 2vw !important; }
+  .faq-question { font-size: 1rem !important; padding: 14px 16px !important; }
+  .faq-answer { font-size: 0.95rem !important; padding: 0 16px !important; }
+}
+/* === Reviews (Відгуки) — Dark Cyberpunk Style === */
+.reviews-section {
+  background: #2d244a !important;
+  padding: 80px 4vw 120px !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.reviews-section .section-title {
+  color: #e0d9ff !important;
+  font-size: 2.4rem !important;
+  text-align: center !important;
+  margin-bottom: 48px !important;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.7) !important;
+}
+
+/* контейнер для карточек */
+.reviews-section .reviews-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(300px,1fr)) !important;
+  gap: 32px !important;
+  max-width: 1280px !important;
+  margin: 0 auto !important;
+}
+
+/* сама карточка отзыва */
+.review-card {
+  background: rgba(255,255,255,0.05) !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+  border-radius: 16px !important;
+  padding: 32px 24px 24px !important;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.5), 0 2px 8px rgba(0,0,0,0.3) !important;
+  transform: translateY(0) scale(1) !important;
+  transition: transform 0.3s, box-shadow 0.3s !important;
+  color: #f0f0f8 !important;
+}
+
+/* hover-эффект карточки */
+.review-card:hover {
+  transform: translateY(-6px) scale(1.03) !important;
+  box-shadow:
+    0 12px 36px rgba(0,0,0,0.7),
+    0 4px 16px rgba(0,0,0,0.5) !important;
+}
+
+/* аватар-эмоджи */
+.review-avatar {
+  background: rgba(255,255,255,0.1) !important;
+  color: #39ce7b !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.6) !important;
+  font-size: 2.4rem !important;
+  width: 48px !important; height: 48px !important;
+  display: flex; align-items: center; justify-content: center !important;
+  border-radius: 50% !important;
+  margin-bottom: 20px !important;
+}
+
+/* текст отзыва */
+.review-text {
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+  color: #cfd4e4 !important;
+  margin-bottom: 20px !important;
+}
+
+/* автор и рейтинг */
+.review-author {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  font-size: 0.9rem !important;
+}
+.review-author .author-name {
+  font-weight: 600 !important;
+  color: #39ce7b !important;
+}
+.review-author .author-email {
+  font-style: italic !important;
+  color: rgba(255,255,255,0.7) !important;
+}
+.review-author .author-rating {
+  color: #ffd94e !important;
+  letter-spacing: 0.04em !important;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .reviews-section { padding: 60px 2vw 100px !important; }
+  .reviews-section .reviews-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  .review-card {
+    padding: 28px 20px 20px !important;
+  }
+  .review-avatar { width: 42px; height: 42px; font-size: 2rem !important; }
+  .review-text { font-size: 0.95rem !important; }
+}
+@media (max-width: 600px) {
+  .reviews-section { padding: 40px 2vw 80px !important; }
+  .review-card { padding: 24px 16px 16px !important; }
+  .review-text { font-size: 0.9rem !important; }
+}
+/* === Contact Section — Dark Cyberpunk === */
+.contact-section {
+  background: #2d244a !important;
+  padding: 80px 4vw 100px !important;
+  text-align: center !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.contact-section .contact-container {
+  max-width: 720px !important;
+  margin: 0 auto !important;
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.contact-title {
+  font-size: 2.4rem !important;
+  margin-bottom: 16px !important;
+  color: #e0d9ff !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.5px !important;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.7) !important;
+}
+
+.contact-subtitle {
+  font-size: 1rem !important;
+  margin-bottom: 32px !important;
+  color: #cfd4e4 !important;
+  line-height: 1.6 !important;
+}
+
+/* Telegram button */
+.telegram-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  background: #0088cc !important;
+  color: #fff !important;
+  padding: 14px 32px !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  border-radius: 32px !important;
+  text-decoration: none !important;
+  box-shadow: 0 4px 16px rgba(0,136,204,0.6) !important;
+  transition: background .3s, transform .2s, box-shadow .2s !important;
+}
+.telegram-btn svg {
+  transition: transform .3s !important;
+}
+.telegram-btn:hover {
+  background: #00a8ff !important;
+  transform: translateY(-3px) scale(1.05) !important;
+  box-shadow: 0 8px 32px rgba(0,136,204,0.8) !important;
+}
+.telegram-btn:hover svg {
+  transform: rotate(12deg) scale(1.1) !important;
+}
+.telegram-btn:active {
+  background: #0561a7 !important;
+  transform: scale(0.97) !important;
+  box-shadow: 0 2px 8px rgba(0,136,204,0.5) !important;
+}
+
+/* Floating fixed Telegram btn */
+.contact-fixed {
+  position: fixed !important;
+  right: 24px !important;
+  bottom: 24px !important;
+  z-index: 3000 !important;
+  background: #0088cc !important;
+  color: #fff !important;
+  width: 68px !important;
+  height: 68px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 6px 26px rgba(0,136,204,0.6) !important;
+  transition: background .2s, transform .2s, box-shadow .2s !important;
+  cursor: pointer !important;
+}
+.contact-fixed svg {
+  width: 36px !important;
+  height: 36px !important;
+  transition: transform .3s !important;
+}
+.contact-fixed:hover {
+  background: #00a8ff !important;
+  transform: translateY(-4px) scale(1.08) !important;
+  box-shadow: 0 12px 40px rgba(0,136,204,0.8) !important;
+}
+.contact-fixed:hover svg {
+  transform: rotate(15deg) scale(1.15) !important;
+}
+/* ===== Custom Image Divider Dark Style ===== */
+.custom-img-divider {
+  background: #2d244a;            /* тёмный фон секции */
+  padding: 60px 0;                /* отступы сверху/снизу */
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.custom-img-divider img {
+  max-width: 90%;
+  width: auto;
+  border-radius: 20px;
+  box-shadow: 0 8px 48px rgba(0, 150, 255, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.custom-img-divider img:hover {
+  transform: scale(1.02) rotate(-1deg);
+  box-shadow: 0 16px 64px rgba(0, 150, 255, 0.6);
+}
+
+/* ===== Footer Dark Style ===== */
+.footer {
+  background: #1a152b;            /* тёмный фоновый цвет */
+  color: #ccc;                    /* светлый цвет текста */
+  padding: 24px 4vw;
+  text-align: center;
+  font-size: 0.95rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.footer a {
+  color: #3eaeff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer a:hover {
+  color: #67c8ff;
+}
+.footer-back {
+  display: inline-block;
+  background: #3eaeff;
+  color: #1a152b;
+  padding: 8px 18px;
+  border-radius: 24px;
+  box-shadow: 0 4px 16px rgba(62,174,255,0.3);
+  transition: background 0.2s, transform 0.2s;
+}
+.footer-back:hover {
+  background: #67c8ff;
+  transform: translateY(-2px) scale(1.05);
+}
+.footer-copy {
+  margin-top: 12px;
+  color: #aaa;
+}
+/* ==== Mobile nav (возвращаем бургер) ==== */
+@media (max-width: 900px) {
+  /* Показываем кнопку «бургер» */
+  .burger {
+    display: flex !important;
+  }
+
+  /* Скрываем меню по умолчанию */
+  .nav-menu {
+    display: none !important;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 0;
+    background: rgba(255,255,255,0.98);
+    box-shadow: 0 8px 24px rgba(40,80,80,0.07);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-20px);
+    transition: opacity .3s, transform .3s;
+    z-index: 900;
+  }
+
+  /* Когда у .nav-menu есть класс active — показываем его */
+  .nav-menu.active {
+    display: flex !important;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+}
